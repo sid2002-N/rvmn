@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300" role="img" aria-labelledby="title desc">
+  <title id="title">RVMN edge detection workflow</title>
+  <desc id="desc">A workflow showing an input image converted to grayscale, filtered by directional RVMN masks, normalized, and evaluated with image quality metrics.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fafc"/>
+      <stop offset="1" stop-color="#eef6f2"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="980" height="300" rx="22" fill="#fbfdfc"/>
+  <rect x="22" y="22" width="936" height="256" rx="18" fill="url(#panel)" stroke="#d7e2dd"/>
+  <text x="52" y="62" fill="#0f172a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">RVMN directional edge detection</text>
+  <text x="52" y="91" fill="#475569" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">From image input to edge map comparison in one small Python package.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="52" y="126" width="145" height="92" rx="14" fill="#ffffff" stroke="#d9e2df"/>
+    <rect x="78" y="150" width="44" height="44" rx="8" fill="#dbeafe"/>
+    <path d="M88 184 L100 166 L111 178 L117 171 L122 184 Z" fill="#2563eb"/>
+    <circle cx="113" cy="160" r="5" fill="#0f766e"/>
+    <text x="124" y="164" fill="#0f172a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Input</text>
+    <text x="124" y="185" fill="#64748b" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">BGR, RGB, or gray</text>
+  </g>
+
+  <path d="M212 172 H267" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M267 172 l-10 -7 v14 z" fill="#94a3b8"/>
+
+  <g filter="url(#shadow)">
+    <rect x="282" y="126" width="145" height="92" rx="14" fill="#ffffff" stroke="#d9e2df"/>
+    <rect x="308" y="148" width="40" height="48" rx="8" fill="#e2e8f0"/>
+    <path d="M318 158 H338 M318 170 H338 M318 182 H338" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+    <text x="354" y="164" fill="#0f172a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Grayscale</text>
+    <text x="354" y="185" fill="#64748b" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">uint8 matrix</text>
+  </g>
+
+  <path d="M442 172 H497" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M497 172 l-10 -7 v14 z" fill="#94a3b8"/>
+
+  <g filter="url(#shadow)">
+    <rect x="512" y="114" width="174" height="116" rx="14" fill="#ffffff" stroke="#d9e2df"/>
+    <g transform="translate(535 137)">
+      <rect width="58" height="58" rx="9" fill="#ecfeff" stroke="#99f6e4"/>
+      <path d="M12 45 L46 12 M18 48 L48 18 M10 32 L32 10" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(606 137)">
+      <rect width="58" height="58" rx="9" fill="#eff6ff" stroke="#bfdbfe"/>
+      <path d="M29 8 V50 M14 20 H44 M18 38 H40" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <text x="535" y="215" fill="#0f172a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">RVMN masks</text>
+    <text x="632" y="215" fill="#64748b" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">lambda, rho, theta</text>
+  </g>
+
+  <path d="M701 172 H756" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M756 172 l-10 -7 v14 z" fill="#94a3b8"/>
+
+  <g filter="url(#shadow)">
+    <rect x="771" y="126" width="157" height="92" rx="14" fill="#ffffff" stroke="#d9e2df"/>
+    <rect x="795" y="150" width="46" height="44" rx="8" fill="url(#accent)"/>
+    <path d="M805 183 C812 160, 825 183, 831 159" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    <text x="849" y="164" fill="#0f172a" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Outputs</text>
+    <text x="849" y="185" fill="#64748b" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">edges plus metrics</text>
+  </g>
+
+  <text x="52" y="252" fill="#475569" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Compare RVMN with Sobel and Prewitt using PSNR, RMSE, SSIM, FOM, PCC, MAE, and MSE.</text>
+</svg>
