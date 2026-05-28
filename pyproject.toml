@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rvmn"
+version = "0.1.0"
+description = "RVMN directional edge detection filters and comparison utilities."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  { name = "Siddh" }
+]
+keywords = ["edge-detection", "image-processing", "opencv", "rvmn"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "numpy>=1.23",
+  "opencv-python>=4.8",
+  "scikit-image>=0.20",
+]
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.7"]
+dev = [
+  "build>=1.2",
+  "pytest>=8",
+  "twine>=5",
+]
+
+[project.scripts]
+rvmn = "rvmn.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-username/rvmn"
+Issues = "https://github.com/your-username/rvmn/issues"
+
+[tool.hatch.build]
+ignore-vcs = true
+exclude = [
+  "/.pytest_cache",
+  "/.gitignore",
+  "/build",
+  "/dist",
+  "/**/.gitignore",
+  "/**/__pycache__",
+  "/**/*.py[cod]",
+  "/**/*.ipynb",
+  "/**/*.png",
+  "/**/*.jpg",
+  "/**/*.jpeg",
+  "/**/*.pdf",
+  "/Images",
+  "/lol_dataset",
+  "/results",
+  "/*_qa_pages",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/pyproject.toml",
+  "/README.md",
+  "/src",
+  "/tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rvmn"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
