@@ -72,18 +72,3 @@ Print machine-readable metrics:
 rvmn image.png --json
 ```
 
-## Build
-
-```bash
-python -m build
-```
-
-The build configuration includes only `src/`, `tests/`, `README.md`, and
-`pyproject.toml` in the source archive, and only the `rvmn` package in the wheel.
-Generated notebooks, images, PDFs, result folders, caches, and old `dist/`
-contents are excluded.
-
-## Notes
-
-The coefficient formulas are packaged from the current notebook implementation.
-Keep citation and formula details close to your paper/report when publishing.
